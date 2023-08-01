@@ -18,7 +18,7 @@ const MENU_EXIT = "0 - Exit";
 const MENU_HELP = "? - Help";
 const ENTER_MOVE = "Enter your move: ";
 const INVALID_INPUT = "Invalid input. Please enter a valid move number.";
-const MOVENUMBER_ERROR = "Error: Please provide an odd number of distinct moves (>=3).";
+const MOVENUMBER_ERROR = "Error: Please provide an odd number of distinct moves (>=3) or check if you provide the same move twice";
 const GAMEINIT_EXPAMLE = "Example usage: ts-node game.ts Rock Paper Scissors";
 const HELP_DESCRIPTION = "\n Help Menu \n The table is shown for user.";
 
@@ -213,7 +213,7 @@ function main() {
 	const args = process.argv.slice(2);
 
 	// В случае неправильной инициализации, останавливаем игру и сообщаем об ошибке
-	if (args.length < 3 || args.length % 2 === 0) {
+	if (args.length < 3 || args.length % 2 === 0 || new Set(args).size !== args.length) {
 		console.log(MOVENUMBER_ERROR);
 		console.log(GAMEINIT_EXPAMLE);
 		return;
