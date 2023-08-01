@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "cli-table": "^0.3.11",
+    "readline-sync": "^1.4.10",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5"
+  }
+}
